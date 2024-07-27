@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <meta property="og:image" content="public/thumbnail.png" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./page-plagiarism-checker-output.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap"
+    />
+    <style>
+      .chart-container {
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        margin: auto;
+      }
+
+      .chart {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+
+      .chart svg {
+        transform: rotate(-90deg);
+      }
+
+      .chart circle {
+        fill: none;
+        stroke-width: 20;
+      }
+
+      .chart .bg {
+        stroke: #e6e6e6;
+      }
+
+      .chart .progress {
+        stroke: #009379;
+        stroke-dasharray: 180;
+        stroke-dashoffset: 30; /* Adjust this value based on the percentage (400 - (percentage / 100 * 400)) */
+        transition: stroke-dashoffset 1s;
+      }
+
+      .chart .percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        font-weight: bold;
+        color: #009379;
+      }
+
+      .chart-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-plagiarism-checker-output">
+      <div class="wrapper-page-content">
+        <img class="page-content-icon" alt="" src="./public/page-content.svg" />
+      </div>
+      <div class="wrapper-page-content1">
+        <img
+          class="page-content-icon1"
+          alt=""
+          src="./public/page-content.svg"
+        />
+      </div>
+      <div class="page-plagiarism-checker-output-child"></div>
+      <div class="wrapper-vector2">
+        <img class="vector-icon2" alt="" src="./public/vector-21.svg" />
+      </div>
+      <header class="navbarheaderfooter2">
+        <div class="logo1" id="logoContainer">
+          <img
+            class="image-10-icon1"
+            loading="lazy"
+            alt=""
+            src="./public/image-10@2x.png"
+          />
+
+          <a class="paraphraser1">Paraphraser</a>
+        </div>
+        <div class="navigation-menu1">
+          <div class="button10" id="buttonContainer">
+            <div class="label9">Paraphraser</div>
+            <img class="asset-icons8" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button11">
+            <a class="label10" href="page-plagiarisme.html">Plagiarisme</a>
+            <img class="asset-icons9" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button12">
+            <a class="label11">Checker Grammar</a>
+            <img class="asset-icons10" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button13">
+            <a class="label12">Text Summarizer</a>
+            <img class="asset-icons11" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button14">
+            <a class="label13">AI Essay Writer</a>
+            <img class="asset-icons12" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button15">
+            <a class="label14">APIs</a>
+            <img class="asset-icons13" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="highlighted-ctas1">
+            <button class="button16">
+              <img
+                class="arrowright-icon2"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+
+              <a class="label15">Login</a>
+              <img
+                class="arrowleft-icon2"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+            </button>
+            <button class="button17">
+              <img
+                class="arrowright-icon3"
+                alt=""
+                src="./public/arrowright.svg"
+              />
+
+              <a class="label16">Register</a>
+              <img
+                class="arrowleft-icon3"
+                alt=""
+                src="./public/arrowright.svg"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="form-tools-plagiarism">
+        <section class="from-results">
+          <div class="form-tools-pharafase">
+            <div class="result-description">
+              <button class="tool-features">
+                <div class="check-plagiarisme">Check Plagiarisme</div>
+              </button>
+              <div class="tool-features1">
+                <div class="paraphraser-has-many">
+                  Paraphraser has many features that make its paraphrasing tool
+                  the best on the market, including rephrasing essays, writing
+                  effective content, and creating original copies with AI.
+                  Paraphraser has numerous highlights that make its summarizing
+                  instrument the leading on the advertise, counting rethinking
+                  expositions, composing compelling substance, and making unique
+                  duplicates with AI. Summarizing Like Human Paraphraser has the
+                  craftsmanship of human-level rewording. The ultimate rethought
+                  yield will be imaginative, more discernable, sensible, and
+                  plagiarization free. Paraphraser has many features that make
+                  its paraphrasing tool the best on the market, including
+                  rephrasing essays, writing effective content, and creating
+                  original copies with AI. Paraphraser has numerous highlights
+                  that make its summarizing instrument the leading on the
+                  advertise, counting rethinking expositions, composing
+                  compelling substance, and making unique duplicates with AI.
+                  Summarizing Like Human Paraphraser has the craftsmanship of
+                  human-level rewording. The ultimate rethought yield will be
+                  imaginative, more discernable, sensible, and
+                </div>
+              </div>
+              <div class="plagiat-fitur">
+                <div class="max-text">
+                  <div class="kata2">148/1000 kata</div>
+                </div>
+                <div class="upload-doc">
+                  <img
+                    class="fluentdocument-arrow-down-16-icon"
+                    loading="lazy"
+                    alt=""
+                    src="./public/fluentdocumentarrowdown16regular.svg"
+                  />
+
+                  <div class="mengunggah-dokumen2">Upload Document</div>
+                </div>
+                <div class="language">
+                  <div class="bahasa-indonesia">Bahasa Indonesia</div>
+                  <img
+                    class="fluentchevron-up-down-20-fill-icon2"
+                    loading="lazy"
+                    alt=""
+                    src="./public/fluentchevronupdown20filled.svg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-31">
+            <button class="card-details">
+              <div class="details1">Details</div>
+            </button>
+            <div class="result-breakdown">
+              <div class="chart-container">
+                <div class="chart">
+                  <svg width="200" height="200">
+                    <circle cx="100" cy="100" r="80" class="bg" />
+                    <circle cx="100" cy="100" r="80" class="progress" />
+                  </svg>
+                  <div class="percentage">60 % Plagiat</div>
+                </div>
+              </div>
+              <br><br><br>
+              <div class="plagiarism-uniqueness-wrapper">
+                <div class="plagiarism-uniqueness">
+                  <div class="plagiarism-calculation">
+                    <div class="plagiarism-value">
+                      <div class="plagiat1">Plagiat</div>
+                    </div>
+                  </div>
+                  <div class="uniqueness-calculation">
+                    <div class="uniqueness-value">
+                      <div class="kami-memindai-dokumen">
+                        kami memindai dokumen anda telah menjiplak sebesar
+                      </div>
+                      <div class="div4">60%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="frame-parent7">
+                <button class="frame-button">
+                  <div class="unik-wrapper">
+                    <div class="unik">Unik</div>
+                  </div>
+                </button>
+                <div class="frame-wrapper2">
+                  <div class="kami-memindai-dokumen-anda-tel-parent">
+                    <div class="kami-memindai-dokumen1">
+                      kami memindai dokumen anda telah Unik sebesar
+                    </div>
+                    <div class="div5">40%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="row-button1">
+          <button class="button18">
+            <div class="button19">
+              <img class="cube-icon1" alt="" src="./public/cube.svg" />
+
+              <div class="label17">Plagiat Now</div>
+              <img
+                class="magicwand-icon1"
+                alt=""
+                src="./public/magicwand.svg"
+              />
+            </div>
+          </button>
+        </div>
+      </main>
+      <footer class="navbarheaderfooter3">
+        <div class="copyright1">
+          <div class="anima-landing-page1">
+            Copyright © by Paraphraser.io | All rights reserved.
+          </div>
+        </div>
+        <div class="social-links1">
+          <img
+            class="social-icons4"
+            loading="lazy"
+            alt=""
+            src="./public/social-icons.svg"
+          />
+
+          <img class="social-icons5" alt="" src="./public/social-icons-1.svg" />
+
+          <img class="social-icons6" alt="" src="./public/social-icons-2.svg" />
+
+          <img class="social-icons7" alt="" src="./public/social-icons-3.svg" />
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      var logoContainer = document.getElementById("logoContainer");
+      if (logoContainer) {
+        logoContainer.addEventListener("click", function (e) {
+          window.location.href = "./home-paraphraser-io.html";
+        });
+      }
+
+      var buttonContainer = document.getElementById("buttonContainer");
+      if (buttonContainer) {
+        buttonContainer.addEventListener("click", function (e) {
+          window.location.href = "./page-tools-paraphraser-io-use.html";
+        });
+      }
+
+      var buttonContainer1 = document.getElementById("buttonContainer1");
+      if (buttonContainer1) {
+        buttonContainer1.addEventListener("click", function (e) {
+          window.location.href = "page-plagiarisme.html";
+        });
+      }
+    </script>
+  </body>
+</html>

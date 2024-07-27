@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <meta property="og:image" content="public/thumbnail.png" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./page-tools-paraphraser-io-use.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap"
+    />
+    <script>
+      function countWords() {
+        const text = document.getElementById("input-text").value;
+        const wordCount = text
+          .trim()
+          .split(/\s+/)
+          .filter((word) => word.length > 0).length;
+        console.log("Word Count:", wordCount); // Debugging
+        document.getElementById(
+          "word-count"
+        ).textContent = `${wordCount}/1000 Kata`;
+
+        toggleParaphraseButton(wordCount); // Tambahkan ini
+      }
+
+      function toggleParaphraseButton(wordCount) {
+        const button = document.getElementById("paraphrase-now-button");
+        if (wordCount < 1) {
+          button.disabled = true;
+          button.classList.add("disabled");
+        } else {
+          button.disabled = false;
+          button.classList.remove("disabled");
+        }
+        console.log("Button Disabled:", button.disabled); // Debugging
+      }
+
+      function showPopup() {
+        const text = document.getElementById("input-text").value;
+        const wordCount = text
+          .trim()
+          .split(/\s+/)
+          .filter((word) => word.length > 0).length;
+        if (wordCount < 5) {
+          document.getElementById("popup").style.display = "block";
+        } else {
+          // Logika untuk parafrase jika kata >= 5
+          window.location.href = "output-parafrase.html"; // Ganti dengan logika parafrase sebenarnya
+        }
+      }
+
+      function hidePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+    <style>
+      .try-again-button-wrapper {
+        width: 300px;
+        align-self: stretch;
+        border-radius: 0 0 var(--br-5xs) var(--br-5xs);
+        background-color: #f1f5f8;
+        flex-direction: row;
+        padding: 16px 24px;
+      }
+      .popup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding-top: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-align: center;
+      }
+
+      .popup-icon {
+        position: relative;
+        font-size: 3em;
+        color: red;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .popup-img {
+        position: absolute;
+        top: -90px; /* Naikkan gambar dari posisi default */
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: -1; /* Pastikan gambar di belakang ikon "cancel" */
+      }
+
+      .popup-message {
+        margin-top: -10px;
+      }
+
+      .popup-button {
+        background-color: rgb(236, 26, 26);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+      }
+      .disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .dropdown-container {
+        display: flex;
+        align-items: start;
+        border: 1px solid; /* Border around the container */
+        border-radius: 8px; /* Optional: adds rounded corners */
+        padding: 5px;
+        width: 300px;
+      }
+
+      .dropdown-container img {
+        width: 24px; /* Adjust size as needed */
+        height: 24px; /* Adjust size as needed */
+        margin-right: 10px;
+      }
+
+      .dropdown-container select {
+        color: #009379;
+        font-size: 16px;
+        border: none; /* Remove border from select element */
+      }
+
+      .card-1-inner {
+        padding: 20px; /* Border around the entire card */
+        border-radius: 8px; /* Optional: adds rounded corners */
+      }
+
+      .frame-parent {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Border around the image and dropdown */
+        border-radius: 4px;
+        margin-bottom: 10px; /* Background color for better visibility */
+      }
+
+      .row img {
+        width: 24px; /* Adjust size as needed */
+        height: 24px; /* Adjust size as needed */
+        margin-right: 10px;
+      }
+
+      .row select {
+        font-size: 16px;
+        padding: 5px; /* Border for the dropdown */
+        border-radius: 4px; /* Optional: adds rounded corners */
+        margin-right: 10px;
+      }
+
+      #word-count {
+        font-size: 16px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 275px; /* Adjust height as needed */
+        resize: none;
+        margin-bottom: 10px;
+        border: 1px solid #ccc; /* Optional: border around the textarea */
+        border-radius: 4px; /* Optional: rounded corners */
+      }
+
+      .result-upload-container-wrapper {
+        display: flex;
+        align-items: end;
+      }
+
+      .result-upload-container {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border: 1px solid #ccc; /* Border for the upload container */
+        border-radius: 4px; /* Optional: rounded corners */
+        padding: 5px;
+        background-color: #f9f9f9; /* Background color for better visibility */
+      }
+
+      .mengunggah-dokumen1 {
+        margin-left: 10px;
+      }
+
+      .asset-icons7 {
+        width: 24px;
+        height: 24px;
+      }
+
+      .form-auth-robot {
+        border: 1px solid #ccc;
+        padding: 10px;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .form-auth-robot .heading {
+        display: flex;
+        align-items: center;
+      }
+
+      .form-auth-robot input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+
+      .form-auth-robot label {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-tools-paraphraser-io-use">
+      <div class="wrapper-vector">
+        <img class="vector-icon" alt="" src="./public/page-content.svg" />
+      </div>
+      <div class="wrapper-vector1">
+        <img class="vector-icon1" alt="" src="./public/page-content.svg" />
+      </div>
+      <div class="page-tools-paraphraser-io-use-child"></div>
+      <header class="navbarheaderfooter">
+        <div class="logo" id="logoContainer">
+          <img
+            class="image-10-icon"
+            loading="lazy"
+            alt=""
+            src="./public/image-10@2x.png"
+          />
+
+          <a class="paraphraser">Paraphraser</a>
+        </div>
+        <div class="navigation-menu">
+          <div class="button" id="buttonContainer">
+            <div class="label">Paraphraser</div>
+            <img class="asset-icons" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button1">
+            <a class="label1" href="page-plagiarisme.html">Plagiarisme</a>
+            <img class="asset-icons1" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button2">
+            <a class="label2">Checker Grammar</a>
+            <img class="asset-icons2" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button3">
+            <a class="label3">Text Summarizer</a>
+            <img class="asset-icons3" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button4">
+            <a class="label4">AI Essay Writer</a>
+            <img class="asset-icons4" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button5">
+            <a class="label5">APIs</a>
+            <img class="asset-icons5" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="highlighted-ctas">
+            <button class="button6">
+              <img
+                class="arrowright-icon"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+
+              <a class="label6">Login</a>
+              <img
+                class="arrowleft-icon"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+            </button>
+            <button class="button7">
+              <img
+                class="arrowright-icon1"
+                alt=""
+                src="./public/arrowright.svg"
+              />
+
+              <a class="label7">Register</a>
+              <img
+                class="arrowleft-icon1"
+                alt=""
+                src="./public/arrowright.svg"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="form-tools-pharafaseform-fill">
+        <section class="card-tools">
+          <div class="card-1">
+            <div class="content-container">
+              <div class="content-wrapper" style="overflow: hidden">
+                <div class="menu-wrapper">
+                  <div class="menu">
+                    <div class="menu-inner">
+                      <div class="plagiarisme-wrapper">
+                        <div class="plagiarisme">Word Changer</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="menu1">
+                    <div class="menu-child">
+                      <div class="home-wrapper">
+                        <div class="home">Fluency</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="menu2">
+                    <div class="frame-div">
+                      <div class="home-container">
+                        <a class="home1">Standard</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="menu3" id="menuContainer3">
+                    <div class="menu-inner1">
+                      <div class="home-frame">
+                        <a class="home2">Creative</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="menu4" id="menuContainer4">
+                    <div class="menu-inner2">
+                      <div class="home-wrapper1">
+                        <a class="home3">Smarter</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="menu5" id="menuContainer5">
+                    <div class="menu-inner3">
+                      <div class="home-wrapper2">
+                        <a class="home4">Shorten</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-1-inner">
+              <div class="frame-parent">
+                <div class="row">
+                  <div class="dropdown-container">
+                    <label for="language-dropdown">
+                      <img
+                        src="./public/materialsymbolstranslate.svg"
+                        alt="Indonesian Flag"
+                      />
+                    </label>
+                    <select
+                      id="language-dropdown"
+                      name="language"
+                      style="width: 300px"
+                    >
+                      <option value="id">Indonesian</option>
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="de">German</option>
+                      <!-- Add more languages as needed -->
+                    </select>
+                  </div>
+                  <p id="word-count">0/1000 Kata</p>
+                </div>
+                <textarea
+                  style="border: none"
+                  id="input-text"
+                  name="input-text"
+                  cols="54"
+                  rows="16"
+                  placeholder="Enter the words you want to input at least 5 words"
+                  oninput="countWords()"
+                ></textarea>
+                <input
+                  hidden
+                  type="file"
+                  id="upload-document"
+                  name="upload-document"
+                />
+                <label
+                  for="upload-document"
+                  class="result-upload-container-wrapper"
+                >
+                  <div class="result-upload-container">
+                    <img
+                      class="asset-icons7"
+                      alt=""
+                      src="./public/asset-icons1.svg"
+                    />
+                    <a class="mengunggah-dokumen1">Mengunggah dokumen</a>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card-3">
+            <button class="details-container">
+              <div class="details">Details</div>
+            </button>
+            <div class="reading-metrics">
+              <div class="reading-metrics-inner">
+                <div class="frame-container">
+                  <div class="frame-parent1">
+                    <input
+                      class="frame-child"
+                      type="radio"
+                      name="radioGroup-1"
+                    />
+
+                    <a class="words">Words</a>
+                    <div class="div">0</div>
+                  </div>
+                  <img
+                    class="frame-item"
+                    loading="lazy"
+                    alt=""
+                    src="./public/vector-6.svg"
+                  />
+
+                  <div class="frame-parent2">
+                    <input class="frame-inner" type="radio" />
+
+                    <div class="characters">Characters</div>
+                    <div class="div1">0</div>
+                  </div>
+                  <img
+                    class="frame-child1"
+                    loading="lazy"
+                    alt=""
+                    src="./public/vector-6.svg"
+                  />
+
+                  <div class="frame-parent3">
+                    <input class="group-input" type="radio" />
+
+                    <div class="sentences">Sentences</div>
+                    <div class="div2">0</div>
+                  </div>
+                  <img
+                    class="frame-child2"
+                    loading="lazy"
+                    alt=""
+                    src="./public/vector-6.svg"
+                  />
+
+                  <div class="frame-parent4">
+                    <input class="frame-child3" type="radio" />
+
+                    <div class="paragraph">Paragraph</div>
+                    <div class="div3">0</div>
+                  </div>
+                  <img
+                    class="frame-child4"
+                    loading="lazy"
+                    alt=""
+                    src="./public/vector-6.svg"
+                  />
+                </div>
+              </div>
+              <div class="metric-pairs">
+                <input class="metric-pairs-child" type="radio" />
+
+                <div class="reading-level">Reading Level</div>
+                <div class="th">N/A</div>
+              </div>
+              <img
+                class="metric-pairs-icon"
+                loading="lazy"
+                alt=""
+                src="./public/vector-6.svg"
+              />
+
+              <div class="metric-pairs1">
+                <input class="metric-pairs-item" type="radio" />
+
+                <div class="reading-time">Reading Time</div>
+                <div class="min">0</div>
+              </div>
+              <img
+                class="metric-pairs-icon1"
+                loading="lazy"
+                alt=""
+                src="./public/vector-6.svg"
+              />
+            </div>
+          </div>
+          <div class="card-2">
+            <button class="result-container">
+              <div class="pharaphrased-text">Pharaphrased Text</div>
+            </button>
+            <div class="card-1-inner">
+              <div class="frame-parent">
+                <div class="row">
+                  <div class="dropdown-container">
+                    <label for="language-dropdown">
+                      <img
+                        src="./public/materialsymbolstranslate.svg"
+                        alt="Indonesian Flag"
+                      />
+                    </label>
+                    <select
+                      id="language-dropdown"
+                      name="language"
+                      style="width: 300px"
+                    >
+                    <option value="id">Indonesian</option>
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="de">German</option>
+                      <!-- Add more languages as needed -->
+                    </select>
+                  </div>
+                  <p>0/1000 Kata</p>
+                </div>
+                <textarea
+                  style="border: none; background-color: #ffffff; height: 275px"
+                  cols="54"
+                  rows="16"
+                  placeholder="...."
+                  readonly
+                  disabled
+                ></textarea>
+                <input
+                  hidden
+                  type="file"
+                  id="upload-document"
+                  name="upload-document"
+                />
+                <label
+                  for="upload-document"
+                  class="result-upload-container-wrapper"
+                >
+                  <div class="result-upload-container">
+                    <img
+                      class="asset-icons7"
+                      alt=""
+                      src="./public/asset-icons1.svg"
+                    />
+                    <a class="mengunggah-dokumen1">Mengunggah dokumen</a>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+        <button class="form-auth-robot">
+          <div class="heading">
+            <input type="checkbox" id="english" name="language" />
+            <label for="english">I'm Not a Robot</label><br />
+          </div>
+        </button>
+        <div class="row-button">
+          <button
+            id="paraphrase-now-button"
+            class="button8 paraphrase-now-button"
+            type="button"
+            onclick="showPopup()"
+          >
+            <div class="button9">
+              <img class="cube-icon" alt="" src="./public/cube.svg" />
+              <div class="label8">Pharaphrase Now</div>
+              <img class="magicwand-icon" alt="" src="./public/magicwand.svg" />
+            </div>
+          </button>
+        </div>
+      </main>
+      <footer class="navbarheaderfooter1">
+        <div class="copyright">
+          <div class="anima-landing-page">
+            Copyright © by Paraphraser.io | All rights reserved.
+          </div>
+        </div>
+        <div class="social-links">
+          <img
+            class="social-icons"
+            loading="lazy"
+            alt=""
+            src="./public/social-icons.svg"
+          />
+
+          <img class="social-icons1" alt="" src="./public/social-icons-1.svg" />
+
+          <img class="social-icons2" alt="" src="./public/social-icons-2.svg" />
+
+          <img class="social-icons3" alt="" src="./public/social-icons-3.svg" />
+        </div>
+      </footer>
+    </div>
+
+    <div id="notifGoPro" class="popup-overlay" style="display: none">
+      <div class="notif-go-pro">
+        <div class="frame-parent18">
+          <div class="frame-parent19">
+            <div class="upgrade-to-wrapper">
+              <b class="upgrade-to">Upgrade To</b>
+            </div>
+            <div class="opening-this-mode-is-a-must-wrapper">
+              <div class="opening-this-mode">Opening this mode is a must</div>
+            </div>
+          </div>
+          <div class="frame-parent20">
+            <div class="go-pro-wrapper" id="popupframeContainer">
+              <div class="go-pro1">Go PRO</div>
+            </div>
+            <div class="back-wrapper">
+              <div class="back" onclick="hidePop()">Back</div>
+            </div>
+          </div>
+        </div>
+        <div class="asset-icons-wrapper">
+          <img class="asset-icons91" alt="" src="./public/asset-icons3.svg" />
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="popup">
+      <span class="popup-icon" onclick="hidePopup()">
+        <img src="./public/cancle3.png" alt="" class="popup-img" /><br />
+      </span>
+      <h2 class="popup-message">Cancel</h2>
+      <br />
+      <p class="popup-message" style="color: #ccc">
+        The words you enter are less than 5 words
+      </p>
+      <br />
+      <div class="try-again-button-wrapper">
+        <button class="popup-button" onclick="hidePopup()">Try Again</button>
+      </div>
+    </div>
+
+    <script>
+      var popupframeContainer = document.getElementById("popupframeContainer");
+      if (popupframeContainer) {
+        popupframeContainer.addEventListener("click", function (e) {
+          window.location.href = "page-plans.html"
+          // Please sync "Page Plans & Pricing Paraphaser" to the project
+        });
+      }
+
+      var logoContainer = document.getElementById("logoContainer");
+      if (logoContainer) {
+        logoContainer.addEventListener("click", function (e) {
+          window.location.href = "./home-paraphraser-io.html";
+        });
+      }
+
+      var buttonContainer = document.getElementById("buttonContainer");
+      if (buttonContainer) {
+        buttonContainer.addEventListener("click", function (e) {
+          window.location.href = "./page-tools-paraphraser-io-use.html";
+        });
+      }
+
+      var menuContainer3 = document.getElementById("menuContainer3");
+      if (menuContainer3) {
+        menuContainer3.addEventListener("click", function () {
+          var popup = document.getElementById("notifGoPro");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+
+      var menuContainer4 = document.getElementById("menuContainer4");
+      if (menuContainer4) {
+        menuContainer4.addEventListener("click", function () {
+          var popup = document.getElementById("notifGoPro");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+
+      var menuContainer5 = document.getElementById("menuContainer5");
+      if (menuContainer5) {
+        menuContainer5.addEventListener("click", function () {
+          var popup = document.getElementById("notifGoPro");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+      function hidePop() {
+    document.getElementById("notifGoPro").style.display = "none";
+  }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <meta property="og:image" content="public/thumbnail.png" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./home-paraphraser-io.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap"
+    />
+    <style>
+      .faq-container {
+        width: 90%;
+        background: white;
+        border-radius: 8px;
+        padding: 30px;
+      }
+
+      .faq-title {
+        text-align: center;
+        font-size: 36px;
+        color: #333;
+      }
+
+      .faq-title span {
+        color: #27ae60;
+      }
+
+      .faq-description {
+        text-align: center;
+        font-size: 16px;
+        color: #777;
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+
+      .faq-item {
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        color: #333;
+        padding: 10px;
+        margin: 0;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .faq-question.active {
+        background: #2da884;
+        color: white;
+      }
+
+      .faq-answer {
+        background-color: #2da884;
+        display: none;
+        padding: 0 20px 20px;
+        font-size: 16px;
+        color: #ffffff;
+      }
+
+      .faq-question.active .arrow {
+        transform: rotate(180deg);
+      }
+
+      .arrow {
+        font-size: 24px;
+        transition: transform 0.3s;
+      }
+
+      .white-icon img {
+        filter: invert(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home-paraphraser-io">
+      <div class="wrapper-vector3">
+        <img class="vector-icon3" alt="" src="./public/page-content.svg" />
+      </div>
+      <div class="wrapper-vector4">
+        <img class="vector-icon4" alt="" src="./public/page-content.svg" />
+      </div>
+      <div class="wrapper-group-111">
+        <img
+          class="wrapper-group-111-child"
+          alt=""
+          src="./public/group-111.svg"
+        />
+      </div>
+      <div>
+        <img
+          class="wrapper-group-112-child"
+          alt=""
+          src="./public/group-112.svg"
+        />
+      </div>
+      <section class="home-paraphraser-io-child"></section>
+      <header class="navbarheaderfooter4">
+        <div class="logo2" id="logoContainer">
+          <img
+            class="image-10-icon2"
+            loading="lazy"
+            alt=""
+            src="./public/image-10@2x.png"
+          />
+
+          <a class="paraphraser2">Paraphraser</a>
+        </div>
+        <div class="navigation-menu2">
+          <div class="button20" id="buttonContainer">
+            <div class="label18">Paraphraser</div>
+            <img class="asset-icons14" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button21" >
+            <a class="label19" href="page-plagiarisme.html">Plagiarisme</a>
+            <img class="asset-icons15" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button22">
+            <a class="label20">Checker Grammar</a>
+            <img class="asset-icons16" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button23">
+            <a class="label21">Text Summarizer</a>
+            <img class="asset-icons17" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button24">
+            <a class="label22">AI Essay Writer</a>
+            <img class="asset-icons18" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button25">
+            <a class="label23">APIs</a>
+            <img class="asset-icons19" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="highlighted-ctas2">
+            <button class="button26">
+              <img
+                class="arrowright-icon4"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+
+              <a class="label24">Login</a>
+              <img
+                class="arrowleft-icon4"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+            </button>
+            <button class="button27">
+              <img
+                class="arrowright-icon5"
+                alt=""
+                src="./public/arrowright.svg"
+              />
+
+              <a class="label25">Register</a>
+              <img
+                class="arrowleft-icon5"
+                alt=""
+                src="./public/arrowright.svg"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+      <section class="hero-sections">
+        <div class="text-heading">
+          <div class="header">
+            <h1 class="create-unique-content">Create Unique Content Easily</h1>
+            <div class="paraphrase-is-the">
+              Paraphrase is the best AI paraphrasing tool that helps you
+              paraphrase sentences, paragraphs, and essays accurately using the
+              most advanced technology.
+            </div>
+          </div>
+          <div class="ctas">
+            <button class="button28">
+              <img
+                class="rocketlaunch-icon"
+                alt=""
+                src="./public/rocketlaunch.svg"
+              />
+
+              <div class="label26">Try Now</div>
+              <img
+                class="arrowleft-icon6"
+                alt=""
+                src="./public/arrowright.svg"
+              />
+            </button>
+            <button class="button29">
+              <img
+                class="arrowright-icon6"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+
+              <div class="label27">How it works</div>
+              <img
+                class="arrowleft-icon7"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+            </button>
+          </div>
+        </div>
+        <img
+          class="features-headings-icon"
+          alt=""
+          src="./public/features-headings@2x.png"
+        />
+      </section>
+      <section class="features-sections">
+        <img
+          class="icon"
+          loading="lazy"
+          alt=""
+          src="./public/5100169-2@2x.png"
+        />
+
+        <div class="header1">
+          <div class="header2">
+            <h1 class="fitur-paraphraser-io">Paraphraser IO Features</h1>
+            <div class="cobalah-alat-hari">
+              Try the tool today. It's all free!
+            </div>
+          </div>
+          <div class="card">
+            <div class="features">
+              <div class="card-info" id="paraphrase">
+                <div class="icon1">
+                  <img
+                    class="asset-icons20"
+                    alt=""
+                    src="./public/asset-icons11.svg"
+                  />
+                </div>
+                <div class="text" >
+                  <a class="paraphraser3">Paraphraser</a>
+                </div>
+              </div>
+              <div class="card-info1" id="plagiarism">
+                <div class="icon2">
+                  <img
+                    class="asset-icons21"
+                    alt=""
+                    src="./public/asset-icons-11.svg"
+                  />
+                </div>
+                <div class="text1" >
+                  <div class="plagiarisme1">Plagiarisme</div>
+                </div>
+              </div>
+            </div>
+            <div class="features1">
+              <button class="card-info2">
+                <div class="icon3">
+                  <img
+                    class="asset-icons22"
+                    alt=""
+                    src="./public/asset-icons-21.svg"
+                  />
+                </div>
+                <div class="text2">
+                  <div class="article-rewriter">Article Rewriter</div>
+                </div>
+              </button>
+              <div class="card-info3">
+                <div class="icon4">
+                  <img
+                    class="asset-icons23"
+                    alt=""
+                    src="./public/asset-icons-31.svg"
+                  />
+                </div>
+                <div class="text3">
+                  <div class="checker-grammar">Checker Grammar</div>
+                </div>
+              </div>
+            </div>
+            <div class="features2">
+              <div class="card-info4">
+                <div class="icon5">
+                  <img
+                    class="asset-icons24"
+                    alt=""
+                    src="./public/asset-icons-41.svg"
+                  />
+                </div>
+                <div class="text4">
+                  <div class="text-summarizer">Text Summarizer</div>
+                </div>
+              </div>
+              <div class="card-info5">
+                <div class="icon6">
+                  <img
+                    class="asset-icons25"
+                    alt=""
+                    src="./public/asset-icons-51.svg"
+                  />
+                </div>
+                <div class="text5">
+                  <div class="ai-essay-writer">AI Essay Writer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-sections1">
+        <div class="card-heading">
+          <div class="text-header">
+            <h1 class="how-does-this">Read More Features</h1>
+            <div class="it-is-an">
+              Learn more about the features in Paraphraser Io, for more details
+              below
+            </div>
+          </div>
+          <div class="card1">
+            <div class="feature-card">
+              <div class="card-info6">
+                <div class="icon7">
+                  <img
+                    class="asset-icons26"
+                    alt=""
+                    src="./public/asset-icons-3.svg"
+                  />
+                </div>
+                <div class="text6">
+                  <h2 class="paraphraser4">Paraphraser</h2>
+                  <div class="our-free-paraphrasing">
+                    Our free paraphrasing tool can be used online across all
+                    devices, including Android & IOS.
+                  </div>
+                </div>
+                <button class="button30" id="rmparaphraser">
+                  <img class="cube-icon2" alt="" src="./public/cube1.svg" />
+
+                  <div class="label28">Read More</div>
+                  <img
+                    class="magicwand-icon2"
+                    alt=""
+                    src="./public/magicwand1.svg"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="feature-card1">
+              <div class="card-info7">
+                <div class="icon8">
+                  <img
+                    class="asset-icons27"
+                    alt=""
+                    src="./public/asset-icons-3.svg"
+                  />
+                </div>
+                <div class="text7">
+                  <h2 class="plagiarisme2">Plagiarisme</h2>
+                  <div class="our-free-paraphrasing1">
+                    Our free paraphrasing tool can be used online across all
+                    devices, including Android & IOS.
+                  </div>
+                </div>
+                <button class="button31" id="rmplagiarism">
+                  <img class="cube-icon3" alt="" src="./public/cube1.svg" />
+
+                  <div class="label29">Read More</div>
+                  <img
+                    class="magicwand-icon3"
+                    alt=""
+                    src="./public/magicwand1.svg"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card2">
+            <div class="feature-card2">
+              <div class="card-info8">
+                <div class="icon9">
+                  <img
+                    class="asset-icons28"
+                    alt=""
+                    src="./public/asset-icons-3.svg"
+                  />
+                </div>
+                <div class="text8">
+                  <h2 class="article-rewrriter">Article Rewriter</h2>
+                  <div class="our-free-paraphrasing2">
+                    Our free paraphrasing tool can be used online across all
+                    devices, including Android & IOS.
+                  </div>
+                </div>
+                <button class="button32">
+                  <img class="cube-icon4" alt="" src="./public/cube1.svg" />
+
+                  <div class="label30">Read More</div>
+                  <img
+                    class="magicwand-icon4"
+                    alt=""
+                    src="./public/magicwand1.svg"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="feature-card3">
+              <div class="card-info9">
+                <div class="icon10">
+                  <img
+                    class="asset-icons29"
+                    alt=""
+                    src="./public/asset-icons-3.svg"
+                  />
+                </div>
+                <div class="text9">
+                  <h2 style="font-size: 20px;" class="checker-grammar1">Checker Grammar</h2>
+                  <div class="our-free-paraphrasing3">
+                    Our free paraphrasing tool can be used online across all
+                    devices, including Android & IOS.
+                  </div>
+                </div>
+                <button class="button33">
+                  <img class="cube-icon5" alt="" src="./public/cube1.svg" />
+
+                  <div class="label31">Read More</div>
+                  <img
+                    class="magicwand-icon5"
+                    alt=""
+                    src="./public/magicwand1.svg"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card3">
+            <div class="feature-card4">
+              <div class="card-info10">
+                <div class="icon11">
+                  <img
+                    class="asset-icons30"
+                    alt=""
+                    src="./public/asset-icons-3.svg"
+                  />
+                </div>
+                <div class="text10">
+                  <h2 class="text-summarizer1">Text Summarizer</h2>
+                  <div class="our-free-paraphrasing4">
+                    Our free paraphrasing tool can be used online across all
+                    devices, including Android & IOS.
+                  </div>
+                </div>
+                <button class="button34">
+                  <img class="cube-icon6" alt="" src="./public/cube1.svg" />
+
+                  <div class="label32">Read More</div>
+                  <img
+                    class="magicwand-icon6"
+                    alt=""
+                    src="./public/magicwand1.svg"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="feature-card5">
+              <div class="card-info11">
+                <div class="icon12">
+                  <img
+                    class="asset-icons31"
+                    alt=""
+                    src="./public/asset-icons-3.svg"
+                  />
+                </div>
+                <div class="text11">
+                  <h2 class="ai-essay-writer1">AI Essay Writer</h2>
+                  <div class="our-free-paraphrasing5">
+                    Our free paraphrasing tool can be used online across all
+                    devices, including Android & IOS.
+                  </div>
+                </div>
+                <button class="button35">
+                  <img class="cube-icon7" alt="" src="./public/cube1.svg" />
+
+                  <div class="label33">Read More</div>
+                  <img
+                    class="magicwand-icon7"
+                    alt=""
+                    src="./public/magicwand1.svg"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="features-sections1">
+        <div class="headline-subhead">
+          <h1 class="how-does-this1">How Does This Paraphrasing Tool Work?</h1>
+          <div class="this-is-an">
+            This is an AI-based paraphraser developed with the most advanced
+            technology. He rewrote the article, rearranged sentences, and
+            paraphrased the text. It also functions as a rewriter and rewriter
+            to reduce the possibility of plagiarism.
+          </div>
+        </div>
+        <div class="cards-row">
+          <div class="feature-card6">
+            <div class="card-info12">
+              <div class="icon13">
+                <img
+                  class="asset-icons32"
+                  alt=""
+                  src="./public/asset-icons2.svg"
+                />
+              </div>
+              <div class="text12">
+                <h2 class="paraphrasing-like-a">Paraphrasing Like a Human</h2>
+                <div class="paraphrasing-has-the">
+                  Paraphrasing has the art of human level paraphrasing. The
+                  restated final result will be creative, easier to read, make
+                  sense, and be free of plagiarism.
+                </div>
+              </div>
+            </div>
+            <div class="button36">
+              <div class="label34">Read More</div>
+              <img
+                class="asset-icons33"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+            </div>
+          </div>
+          <div class="feature-card7">
+            <div class="card-info13">
+              <div class="icon14">
+                <img
+                  class="asset-icons34"
+                  alt=""
+                  src="./public/asset-icons-1.svg"
+                />
+              </div>
+              <div class="text13">
+                <h2 class="ai-paraphrasing-tool-container">
+                  <p class="ai-paraphrasing-tool">AI Paraphrasing Tool</p>
+                  <p class="the-latest">the latest</p>
+                </h2>
+                <div class="our-free-paraphrasing6">
+                  Our free paraphrasing tool is the most advanced AI rephraser
+                  based on NLP. Our paraphrase generator can rephrase sentences
+                  and complete articles in seconds.
+                </div>
+              </div>
+            </div>
+            <div class="button37">
+              <div class="label35">Read More</div>
+              <img
+                class="asset-icons35"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+            </div>
+          </div>
+          <div class="feature-card8">
+            <div class="card-info14">
+              <div class="icon15">
+                <img
+                  class="asset-icons36"
+                  alt=""
+                  src="./public/asset-icons-2.svg"
+                />
+              </div>
+              <div class="text14">
+                <h2 class="retain-the-original">Retain the Original Meaning</h2>
+                <div class="unlike-other-online">
+                  Unlike other online paraphrasing tools, our AI-based sentence
+                  revealer preserves the original meaning of the context while
+                  changing the sentence structure.
+                </div>
+              </div>
+            </div>
+            <div class="button38">
+              <div class="label36">Read More</div>
+              <img
+                class="asset-icons37"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-sections2">
+        <div class="header3">
+          <div class="header4">
+            <h1 class="quality-content">Quality Content!</h1>
+            <div class="rephrasing-tools-produce-conte">
+              Rephrasing tools produce content that is more readable, engaging,
+              and grammatically error-free without compromising the quality of
+              the content after paraphrasing.
+            </div>
+          </div>
+        </div>
+        <img
+          class="icon16"
+          loading="lazy"
+          alt=""
+          src="./public/5995357-2@2x.png"
+        />
+      </section>
+      <section class="hero-sections3">
+        <img
+          class="icon17"
+          loading="lazy"
+          alt=""
+          src="./public/9085429-2@2x.png"
+        />
+
+        <div class="header5">
+          <div class="header6">
+            <h1 class="plagiarism-free">Plagiarism Free!</h1>
+            <div class="our-paraphrasing-tool">
+              Our Paraphrasing Tool helps you  avoid duplication of content .
+              Paraphraser.io is useful for increasing productivity because it
+              quickly and easily generates multiple versions of the same text.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-sections4">
+        <div class="header7">
+          <div class="header8">
+            <h1 class="very-fast">Very Fast!</h1>
+            <div class="rephrasing-tools-produce-conte1">
+              Rephrasing tools produce content that is more readable, engaging,
+              and grammatically error-free without compromising the quality of
+              the content after paraphrasing.
+            </div>
+          </div>
+        </div>
+        <img
+          class="icon18"
+          loading="lazy"
+          alt=""
+          src="./public/4669572-3@2x.png"
+        />
+      </section>
+      <section class="hero-sections5">
+        <img
+          class="icon19"
+          loading="lazy"
+          alt=""
+          src="./public/4436053-2@2x.png"
+        />
+
+        <div class="header9">
+          <div class="header10">
+            <h1 class="easy-to-use">Easy to Use</h1>
+            <div class="sentence-unphrasing-by">
+              Sentence unphrasing by Paraphraser is easy to use and has a
+              user-friendly interface. Do you have suggestions for improving our
+              interface?Please tell us .
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-sections6">
+        <div class="header11">
+          <div class="header12">
+            <h1 class="cheap-premium-prices">Cheap Premium Prices!</h1>
+            <div class="we-provide-fluency">
+              We provide Fluency & Standard mode with a limit of 600 words at no
+              cost. You can reorder unlimited texts without any daily limit. You
+              can increase the word limit to 1500, by upgrading to pro .
+            </div>
+          </div>
+        </div>
+        <img
+          class="icon20"
+          loading="lazy"
+          alt=""
+          src="./public/4752961-2@2x.png"
+        />
+      </section>
+      <section class="hero-sections7">
+        <img
+          class="icon21"
+          loading="lazy"
+          alt=""
+          src="./public/7122676-2@2x.png"
+        />
+
+        <div class="header13">
+          <div class="header14">
+            <h1 class="paraphrasing-apis">Paraphrasing APIs</h1>
+            <div class="colleges-and-universities">
+              Colleges and universities can integrate our rephraser using our
+              paraphrasing APIs.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="blog-sections">
+        <div class="our-blog">
+          <div class="headline-subhead1">
+            <h1 class="our-blog1">Our Blog</h1>
+            <div class="discover-how-paraphraserio">
+              Discover how Paraphraser.io can improve your writing efficiency
+              and creativity.
+            </div>
+          </div>
+          <div class="cards-row1">
+            <div class="card4">
+              <img
+                class="image-17-icon"
+                loading="lazy"
+                alt=""
+                src="./public/image-17@2x.png"
+              />
+
+              <div class="text15">
+                <div class="best-way-to">
+                  Best Way To Summarize A Scientific Research Paper Effectively
+                </div>
+                <div class="crafting-content-is">
+                  Crafting content is certainly a challenging task, especially
+                  if it’s relevant to academics. Academic content demands
+                  extensive research from the individual. If you are writing a
+                  research paper,
+                </div>
+              </div>
+              <div class="social-links2">
+                <img
+                  class="social-iconscircleprimaryfa"
+                  loading="lazy"
+                  alt=""
+                  src="./public/social-iconscircleprimaryfacebook.svg"
+                />
+
+                <img
+                  class="social-iconscircleprimarygi"
+                  loading="lazy"
+                  alt=""
+                  src="./public/social-iconscircleprimarygithub.svg"
+                />
+
+                <img
+                  class="social-iconscircleprimaryin"
+                  loading="lazy"
+                  alt=""
+                  src="./public/social-iconscircleprimaryinstagram.svg"
+                />
+              </div>
+            </div>
+            <div class="card5">
+              <img
+                class="image-18-icon"
+                loading="lazy"
+                alt=""
+                src="./public/image-18@2x.png"
+              />
+
+              <div class="text16">
+                <div class="types-of-paraphrasing">Types Of Paraphrasing</div>
+                <div class="this-involves-changing">
+                  This involves changing the form of the original text, such as
+                  turning a sentence into a question or vice versa. This can
+                  also involve re-arranging the grammatical components of the
+                  text, such as switching the places of the object and subject,
+                  etc.
+                </div>
+              </div>
+              <div class="social-links3">
+                <img
+                  class="social-iconscircleprimaryfa1"
+                  alt=""
+                  src="./public/social-iconscircleprimaryfacebook.svg"
+                />
+
+                <img
+                  class="social-iconscircleprimarygi1"
+                  alt=""
+                  src="./public/social-iconscircleprimarygithub.svg"
+                />
+
+                <img
+                  class="social-iconscircleprimaryin1"
+                  alt=""
+                  src="./public/social-iconscircleprimaryinstagram.svg"
+                />
+              </div>
+            </div>
+            <div class="card6">
+              <img
+                class="image-19-icon"
+                loading="lazy"
+                alt=""
+                src="./public/image-19@2x.png"
+              />
+
+              <div class="text17">
+                <div class="is-a-paraphraser">
+                  Is A Paraphraser Effective Against Plagiarism?
+                </div>
+                <div class="although-its-very">
+                  Although it’s very likely that you already know about
+                  plagiarism as well as its different types, we’re going to go
+                  over it again to set some groundwork for the coming
+                  discussion.
+                </div>
+              </div>
+              <div class="social-links4">
+                <img
+                  class="social-iconscircleprimaryfa2"
+                  alt=""
+                  src="./public/social-iconscircleprimaryfacebook.svg"
+                />
+
+                <img
+                  class="social-iconscircleprimarygi2"
+                  alt=""
+                  src="./public/social-iconscircleprimarygithub.svg"
+                />
+
+                <img
+                  class="social-iconscircleprimaryin2"
+                  alt=""
+                  src="./public/social-iconscircleprimaryinstagram.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pricing-sections">
+        <div class="pricing">
+          <div class="headline-subhead2">
+            <h1 class="plans-pricing">Plans & Pricing</h1>
+            <div class="choose-your-plans">
+              Choose your plans. Get with awesome discounts.
+            </div>
+          </div>
+          <div class="cards-row2">
+            <div class="pricing-card">
+              <div class="text18">
+                <div class="pricing-info">
+                  <div class="weekly">Weekly</div>
+                  <div class="pricing1">
+                    <b class="price-value">$9</b>
+                    <b class="week">/ Week</b>
+                  </div>
+                  <div class="best-for-small">
+                    Best for Small Teams or Individuals.
+                  </div>
+                </div>
+                <div class="pricing-features">
+                  <div class="pricing-feature">
+                    <img class="check-icon1" alt="" src="./public/check.svg" />
+
+                    <b class="validity">Validity</b>
+                    <div class="days">7 days</div>
+                  </div>
+                  <div class="pricing-feature1">
+                    <img class="check-icon2" alt="" src="./public/check.svg" />
+
+                    <b class="paraphraser-limit">Paraphraser Limit</b>
+                    <div class="paraphraser-limit-value">1500</div>
+                  </div>
+                  <div class="pricing-feature2">
+                    <img class="check-icon3" alt="" src="./public/check.svg" />
+
+                    <b class="plagiarism-limit">Plagiarism Limit</b>
+                    <div class="free-version">Free Version</div>
+                  </div>
+                  <div class="pricing-feature17">
+                    <img class="check-icon12" alt="" src="./public/check.svg" />
+
+                    <b class="pricing-feature17">Word Changer <br> Mode Limit</b>
+                    <div class="div12">5000</div>
+                  </div>
+                  <div class="pricing-feature4">
+                    <img class="check-icon5" alt="" src="./public/check.svg" />
+
+                    <b class="premium-modes">Premium Modes</b>
+                    <div class="premium-value">3</div>
+                  </div>
+                  <div class="pricing-feature5">
+                    <img class="check-icon6" alt="" src="./public/check.svg" />
+
+                    <b class="apis">APIs</b>
+                    <div class="no">No</div>
+                  </div>
+                  <div class="pricing-feature6">
+                    <img class="check-icon7" alt="" src="./public/check.svg" />
+
+                    <b class="feature-details-in">Feature Details in plan</b>
+                  </div>
+                </div>
+              </div>
+              <div class="plan-buttons">
+                <button class="button39">
+                  <div class="label37">Get Started</div>
+                  <img
+                    class="asset-icons38"
+                    alt=""
+                    src="./public/asset-icons-5.svg"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="pricing-card1">
+              <div class="text19">
+                <div class="pricing-info1">
+                  <div class="yearly">Yearly</div>
+                  <div class="pricing2">
+                    <b class="b">$13.75</b>
+                    <b class="year">/ year</b>
+                  </div>
+                  <div class="short-description-goes">
+                    Ultimate for Enterprise Solutions.
+                  </div>
+                </div>
+                <div class="pricing-features2">
+                  <div class="pricing-feature14">
+                    <img class="check-icon9" alt="" src="./public/check-7.svg" />
+
+                    <b class="validity2">Validity</b>
+                    <div class="days2">365 days</div>
+                  </div>
+                  <div class="pricing-feature15">
+                    <img class="check-icon10" alt="" src="./public/check-7.svg" />
+
+                    <b class="paraphraser-limit2">Paraphraser Limit</b>
+                    <div class="div10">1500</div>
+                  </div>
+                  <div class="pricing-feature16">
+                    <img class="check-icon11" alt="" src="./public/check-7.svg" />
+
+                    <b class="plagiarism-limit2">Plagiarism Limit</b>
+                    <div class="div11">2000</div>
+                  </div>
+                  <div class="pricing-feature17">
+                    <img class="check-icon12" alt="" src="./public/check-7.svg" />
+
+                    <b class="pricing-feature17">Word Changer <br> Mode Limit</b>
+                    <div class="div12">5000</div>
+                  </div>
+                  <div class="pricing-feature18">
+                    <img class="check-icon13" alt="" src="./public/check-7.svg" />
+
+                    <b class="premium-modes2">Premium Modes</b>
+                    <div class="div13">3</div>
+                  </div>
+                  <div class="pricing-feature19">
+                    <img class="check-icon14" alt="" src="./public/check-7.svg" />
+
+                    <b class="apis2">APIs</b>
+                    <div class="no2">No</div>
+                  </div>
+                </div>
+              </div>
+              <div class="button-wrapper">
+                <button class="button40">
+                  <div class="label38">Get Started</div>
+                  <img
+                    class="asset-icons39"
+                    alt=""
+                    src="./public/asset-icons.svg"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="pricing-card2">
+              <div class="text20">
+                <div class="pricing-info2">
+                  <div class="monthly">Monthly</div>
+                  <div class="pricing3">
+                    <b class="b1">$23</b>
+                    <b class="month">/ month</b>
+                  </div>
+                  <div class="short-description-goes1">
+                    Ideal for Growing Companies.
+                  </div>
+                </div>
+                <div class="pricing-features2">
+                  <div class="pricing-feature14">
+                    <img class="check-icon9" alt="" src="./public/check.svg" />
+
+                    <b class="validity2">Validity</b>
+                    <div class="days2">30 days</div>
+                  </div>
+                  <div class="pricing-feature15">
+                    <img class="check-icon10" alt="" src="./public/check.svg" />
+
+                    <b class="paraphraser-limit2">Paraphraser Limit</b>
+                    <div class="div10">1500</div>
+                  </div>
+                  <div class="pricing-feature16">
+                    <img class="check-icon11" alt="" src="./public/check.svg" />
+
+                    <b class="plagiarism-limit2">Plagiarism Limit</b>
+                    <div class="div11">2000</div>
+                  </div>
+                  <div class="pricing-feature17">
+                    <img class="check-icon12" alt="" src="./public/check.svg" />
+
+                    <b class="pricing-feature17">Word Changer <br> Mode Limit</b>
+                    <div class="div12">5000</div>
+                  </div>
+                  <div class="pricing-feature18">
+                    <img class="check-icon13" alt="" src="./public/check.svg" />
+
+                    <b class="premium-modes2">Premium Modes</b>
+                    <div class="div13">3</div>
+                  </div>
+                  <div class="pricing-feature19">
+                    <img class="check-icon14" alt="" src="./public/check.svg" />
+
+                    <b class="apis2">APIs</b>
+                    <div class="no2">No</div>
+                  </div>
+                </div>
+              </div>
+              <div class="button-container">
+                <button class="button41">
+                  <div class="label39">Get Started</div>
+                  <img
+                    class="asset-icons40"
+                    alt=""
+                    src="./public/asset-icons-5.svg"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faqs-sections">
+        <div class="title-text">
+          <h1 class="frequently-asked-questions-container">
+            <span>Frequently Asked </span>
+            <span class="questions">Questions</span>
+          </h1>
+          <div class="discover-how-paraphraserio1">
+            Discover how Paraphraser.io can answer your frequently asked writing
+            questions.
+          </div>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              Can you get in trouble for using a Paraphrasing tool?
+              <span class="arrow"
+                ><img src="./public/group-1.svg" alt=""
+              /></span>
+            </div>
+            <div class="faq-answer">
+              <p style="margin: 0">
+                No, using a paraphrasing tool is not illegal if used correctly.
+                In academic writing, if you use a word rephraser to create
+                content then it must be correctly cited. Using paraphrased
+                content as original work could be considered academic
+                misconduct.
+              </p>
+            </div>
+          </div>
+          <br>
+          <div class="faq-item">
+            <div class="faq-question">
+              Is using a Paraphrasing tool count as plagiarism?
+              <span class="arrow"
+                ><img src="./public/group-1.svg" alt=""
+              /></span>
+            </div>
+            <div class="faq-answer">
+              <p style="margin: 0">
+                Using a paraphrasing tool can be considered plagiarism if the
+                content is not correctly cited. It is important to always give
+                proper credit to the original source.
+              </p>
+            </div>
+          </div>
+          <br>
+          <div class="faq-item">
+            <div class="faq-question">
+              Can I use a Paraphrasing tool for legal writing?
+              <span class="arrow"
+                ><img src="./public/group-1.svg" alt=""
+              /></span>
+            </div>
+            <div class="faq-answer">
+              <p style="margin: 0">
+                It is recommended to consult with legal guidelines and standards
+                when using a paraphrasing tool for legal writing to ensure
+                compliance with legal standards.
+              </p>
+            </div>
+          </div>
+          <br>
+          <div class="faq-item">
+            <div class="faq-question">
+              What kind of text can I paraphrase with Paraphrasing.io
+              paraphrasing tool?
+              <span class="arrow"
+                ><img src="./public/group-1.svg" alt=""
+              /></span>
+            </div>
+            <div class="faq-answer">
+              <p style="margin: 0">
+                You can paraphrase a wide variety of text including academic
+                papers, articles, essays, and more using the Paraphrasing.io
+                tool.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="navbarheaderfooter10">
+      <div class="anima-landing-page-ui-kit-frame">
+        <div class="anima-landing-page4">
+          Copyright © by Paraphraser.io | All rights reserved.
+        </div>
+      </div>
+      <div class="social-links7">
+        <img
+          class="social-icons16"
+          loading="lazy"
+          alt=""
+          src="./public/social-icons.svg"
+        />
+
+        <img
+          class="social-icons17"
+          alt=""
+          src="./public/social-icons-1.svg"
+        />
+
+        <img
+          class="social-icons18"
+          alt=""
+          src="./public/social-icons-2.svg"
+        />
+
+        <img
+          class="social-icons19"
+          alt=""
+          src="./public/social-icons-3.svg"
+        />
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+
+                const arrow = item.querySelector('.arrow');
+                arrow.classList.toggle('white-icon');
+            });
+        });
+
+      var logoContainer = document.getElementById("logoContainer");
+      if (logoContainer) {
+        logoContainer.addEventListener("click", function (e) {
+          window.location.href = "./home-paraphraser-io.html";
+        });
+      }
+
+      var buttonContainer = document.getElementById("buttonContainer");
+      if (buttonContainer) {
+        buttonContainer.addEventListener("click", function (e) {
+          window.location.href = "page-tools-paraphraser-io-use.html";
+        });
+      }
+
+      var paraphrase = document.getElementById("paraphrase");
+      if (paraphrase) {
+        paraphrase.addEventListener("click", function (e) {
+          window.location.href = "page-tools-paraphraser-io-use.html";
+        });
+      }
+
+      var plagiarism = document.getElementById("plagiarism");
+      if (plagiarism) {
+        plagiarism.addEventListener("click", function (e) {
+          window.location.href = "page-plagiarisme.html";
+        });
+      }
+
+      var rmparaphraser = document.getElementById("rmparaphraser");
+      if (rmparaphraser) {
+        rmparaphraser.addEventListener("click", function (e) {
+          window.location.href = "page-detail-about-paraphraser.html";
+        });
+      }
+
+      var rmplagiarism = document.getElementById("rmplagiarism");
+      if (rmplagiarism) {
+        rmplagiarism.addEventListener("click", function (e) {
+          window.location.href = "home-page-plagiarism.html";
+        });
+      }
+      
+    </script>
+  </body>
+</html>

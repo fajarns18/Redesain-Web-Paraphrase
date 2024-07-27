@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <meta property="og:image" content="public/thumbnail.png" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./page-plagiarism-checker-output.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap"
+    />
+    <style>
+      .try-again-button-wrapper {
+        width: 300px;
+        align-self: stretch;
+        border-radius: 0 0 var(--br-5xs) var(--br-5xs);
+        background-color: #f1f5f8;
+        flex-direction: row;
+        padding: 16px 24px;
+      }
+      .popup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding-top: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-align: center;
+      }
+
+      .popup-icon {
+        position: relative;
+        font-size: 3em;
+        color: red;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .popup-img {
+        position: absolute;
+        top: -90px; /* Naikkan gambar dari posisi default */
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: -1; /* Pastikan gambar di belakang ikon "cancel" */
+      }
+
+      .popup-message {
+        margin-top: -10px;
+      }
+
+      .popup-button {
+        background-color: rgb(236, 26, 26);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="page-plagiarism-checker-output">
+      <div class="wrapper-page-content">
+        <img class="page-content-icon" alt="" src="./public/page-content.svg" />
+      </div>
+      <div class="wrapper-page-content1">
+        <img
+          class="page-content-icon1"
+          alt=""
+          src="./public/page-content.svg"
+        />
+      </div>
+      <div class="page-plagiarism-checker-output-child"></div>
+      <div class="wrapper-vector2">
+        <img class="vector-icon2" alt="" src="./public/vector-21.svg" />
+      </div>
+      <header class="navbarheaderfooter2">
+        <div class="logo1" id="logoContainer">
+          <img
+            class="image-10-icon1"
+            loading="lazy"
+            alt=""
+            src="./public/image-10@2x.png"
+          />
+
+          <a class="paraphraser1">Paraphraser</a>
+        </div>
+        <div class="navigation-menu1">
+          <div class="button10" id="buttonContainer">
+            <div class="label9">Paraphraser</div>
+            <img class="asset-icons8" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button11" id="buttonContainer1">
+            <a class="label10">Plagiarisme</a>
+            <img class="asset-icons9" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button12">
+            <a class="label11">Checker Grammar</a>
+            <img class="asset-icons10" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button13">
+            <a class="label12">Text Summarizer</a>
+            <img class="asset-icons11" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button14">
+            <a class="label13">AI Essay Writer</a>
+            <img class="asset-icons12" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="button15">
+            <a class="label14">APIs</a>
+            <img class="asset-icons13" alt="" src="./public/asset-icons.svg" />
+          </div>
+          <div class="highlighted-ctas1">
+            <button class="button16">
+              <img
+                class="arrowright-icon2"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+
+              <a class="label15">Login</a>
+              <img
+                class="arrowleft-icon2"
+                alt=""
+                src="./public/asset-icons.svg"
+              />
+            </button>
+            <button class="button17">
+              <img
+                class="arrowright-icon3"
+                alt=""
+                src="./public/arrowright.svg"
+              />
+
+              <a class="label16">Register</a>
+              <img
+                class="arrowleft-icon3"
+                alt=""
+                src="./public/arrowright.svg"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="form-tools-plagiarism">
+        <section class="from-results">
+          <div class="form-tools-pharafase">
+            <div class="result-description">
+              <button class="tool-features">
+                <div class="check-plagiarisme">Check Plagiarisme</div>
+              </button>
+              <textarea
+                id="textInput"
+                style="
+                  height: 270px;
+                  width: 98%;
+                  margin-left: 10px;
+                  border: none;
+                "
+                name=""
+                placeholder="Tuliskan teks..."
+              ></textarea>
+              <div class="plagiat-fitur">
+                <div class="max-text">
+                  <div id="wordCount" class="kata2">0/1000 kata</div>
+                </div>
+                <div class="upload-doc">
+                  <img
+                    class="fluentdocument-arrow-down-16-icon"
+                    loading="lazy"
+                    alt=""
+                    src="./public/fluentdocumentarrowdown16regular.svg"
+                  />
+                  <input
+                    hidden
+                    type="file"
+                    id="upload-document"
+                    name="upload-document"
+                  />
+                  <label class="mengunggah-dokumen2" for="upload-document"
+                    >Upload Document</label
+                  >
+                </div>
+                <div class="language">
+                  <div class="bahasa-indonesia">Bahasa Indonesia</div>
+                  <img
+                    class="fluentchevron-up-down-20-fill-icon2"
+                    loading="lazy"
+                    alt=""
+                    src="./public/fluentchevronupdown20filled.svg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="row-button1">
+          <button id="plagiarismeButton" class="button18">
+            <div class="button19">
+              <img class="cube-icon1" alt="" src="./public/cube.svg" />
+              <div class="label17">Plagiat Now</div>
+              <img
+                class="magicwand-icon1"
+                alt=""
+                src="./public/magicwand.svg"
+              />
+            </div>
+          </button>
+        </div>
+      </main>
+      <footer class="navbarheaderfooter3">
+        <div class="copyright1">
+          <div class="anima-landing-page1">
+            Copyright © by Paraphraser.io | All rights reserved.
+          </div>
+        </div>
+        <div class="social-links1">
+          <img
+            class="social-icons4"
+            loading="lazy"
+            alt=""
+            src="./public/social-icons.svg"
+          />
+
+          <img class="social-icons5" alt="" src="./public/social-icons-1.svg" />
+
+          <img class="social-icons6" alt="" src="./public/social-icons-2.svg" />
+
+          <img class="social-icons7" alt="" src="./public/social-icons-3.svg" />
+        </div>
+      </footer>
+    </div>
+    <div class="popup" id="popup">
+      <span class="popup-icon" onclick="hidePopup()">
+        <img src="./public/cancle3.png" alt="" class="popup-img" /><br />
+      </span>
+      <h2 class="popup-message">Cancel</h2>
+      <br />
+      <p class="popup-message" style="color: #ccc">
+        The words you enter are less than 5 words
+      </p>
+      <br />
+      <div class="try-again-button-wrapper">
+        <button class="popup-button" onclick="hidePopup()">Try Again</button>
+      </div>
+    </div>
+
+    <script>
+      // Function to count words
+      function countWords(text) {
+        text = text.trim();
+        return text ? text.split(/\s+/).length : 0;
+      }
+
+      // Get references to the textarea and word count display
+      var textInput = document.getElementById("textInput");
+      var wordCountDisplay = document.getElementById("wordCount");
+      var popup = document.getElementById("popup");
+
+      // Update word count on input event
+      textInput.addEventListener("input", function () {
+        var wordCount = countWords(textInput.value);
+        wordCountDisplay.textContent = `${wordCount}/1000 kata`;
+      });
+
+      // Handle click event for "Plagiat Now" button
+      var plagiarismeButton = document.getElementById("plagiarismeButton");
+      plagiarismeButton.addEventListener("click", function () {
+        var wordCount = countWords(textInput.value);
+        if (wordCount < 5) {
+          showPopup();
+        } else {
+          // Logic to perform plagiarism check or other actions
+          window.location.href = "page-plagiarism-checker-output.html";
+        }
+      });
+
+      function showPopup() {
+        popup.style.display = "block";
+      }
+
+      function hidePopup() {
+        popup.style.display = "none";
+      }
+
+      // Existing JavaScript code
+      var logoContainer = document.getElementById("logoContainer");
+      if (logoContainer) {
+        logoContainer.addEventListener("click", function (e) {
+          window.location.href = "./home-paraphraser-io.html";
+        });
+      }
+
+      var buttonContainer = document.getElementById("buttonContainer");
+      if (buttonContainer) {
+        buttonContainer.addEventListener("click", function (e) {
+          window.location.href = "./page-tools-paraphraser-io-use.html";
+        });
+      }
+
+      var buttonContainer1 = document.getElementById("buttonContainer1");
+      if (buttonContainer1) {
+        buttonContainer1.addEventListener("click", function (e) {
+          window.location.href = "./page-plagiarisme.html";
+        });
+      }
+    </script>
+  </body>
+</html>
